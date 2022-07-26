@@ -1,6 +1,7 @@
 from tplink_smartplug import SmartPlug
 
 
+
 def toggle(state, ip):
     try:
         plug = SmartPlug(ip)

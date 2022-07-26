@@ -2,16 +2,19 @@ from flask import Flask
 import govee_func
 import kasa_func
 
-
 app = Flask(__name__)
 
-
+govee_func = govee_func.GoveeFunction(
+    apiKey="095cfe5a-3e8d-430d-95a3-c23336a822cc")
 govee_devices = {'room1': {'mac': '0F:21:A4:C1:38:16:C9:C2', 'model': 'H6110'},
                  'room2': {'mac': '5F:EB:A4:C1:38:00:92:D2', 'model': 'H6159'},
                  'desk': {'mac': 'AB:B7:A4:C1:38:BE:1C:6D', 'model': 'H6159'}}
-
-
 kasa_devices = {'fan': '10.0.0.207', 'lamp': '10.0.0.27'}
+
+
+@app.route('/')
+def index():
+    return '200'
 
 
 @app.route('/govee/toggle/<state>/<mac>&<model>')
@@ -56,4 +59,4 @@ def scenes(scene):
 
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port='8080')
+    app.run(debug=True, host='0.0.0.0', port='8080')
