@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      button {
+        border: 20px;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+      }
+      #f {
+        width: 1050px;
+        padding: 30px 30px;
+        font-size: 65px;
+      }
+      #h {
+        width: 520px;
+        padding: 15px 15px;
+        font-size: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="f" onclick="all_on()">Turn ON</button>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <button id="f" onclick="all_off()">Turn OFF</button>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <button id="h" onclick="lamp_on()">Lamp ON</button>
+      <button id="h" onclick="lamp_off()">Lamp OFF</button>
+    </div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <button id="h" onclick="fan_on()">Fan ON</button>
+      <button id="h" onclick="fan_off()">Fan OFF</button>
+    </div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <button id="h" onclick="room1_on()">Room 1 ON</button>
+      <button id="h" onclick="room1_off()">Room 1 OFF</button>
+    </div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <button id="h" onclick="room2_on()">Room 2 ON</button>
+      <button id="h" onclick="room2_off()">Room 2 OFF</button>
+    </div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <button id="h" onclick="desk_on()">Desk ON</button>
+      <button id="h" onclick="desk_off()">Desk OFF</button>
+    </div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <script>
+      function all_on() {
+        const Http = new XMLHttpRequest();
+        const url = "http://10.0.0.50:8080/scenes/all_on";
+        Http.open("GET", url);
+        Http.send();
+      }
+
+      function all_off() {
+        const Http = new XMLHttpRequest();
+        const url = "http://10.0.0.50:8080/scenes/all_off";
+        Http.open("GET", url);
+        Http.send();
+      }
+
+      function lamp_on() {
+        const Http = new XMLHttpRequest();
+        const url = "http://10.0.0.50:8080/kasa/toggle/on/10.0.0.27";
+        Http.open("GET", url);
+        Http.send();
+      }
+
+      function lamp_off() {
+        const Http = new XMLHttpRequest();
+        const url = "http://10.0.0.50:8080/kasa/toggle/off/10.0.0.27";
+        Http.open("GET", url);
+        Http.send();
+      }
+
+      function fan_on() {
+        const Http = new XMLHttpRequest();
+        const url = "http://10.0.0.50:8080/kasa/toggle/on/10.0.0.207";
+        Http.open("GET", url);
+        Http.send();
+      }
+
+      function fan_off() {
+        const Http = new XMLHttpRequest();
+        const url = "http://10.0.0.50:8080/kasa/toggle/off/10.0.0.207";
+        Http.open("GET", url);
+        Http.send();
+      }
+
+      function room1_on() {
+        const Http = new XMLHttpRequest();
+        const url =
+          "http://10.0.0.50:8080/govee/toggle/on/0F:21:A4:C1:38:16:C9:C2&H6110";
+        Http.open("GET", url);
+        Http.send();
+      }
+
+      function room1_off() {
+        const Http = new XMLHttpRequest();
+        const url =
+          "http://10.0.0.50:8080/govee/toggle/off/0F:21:A4:C1:38:16:C9:C2&H6110";
+        Http.open("GET", url);
+        Http.send();
+      }
+
+      function room2_on() {
+        const Http = new XMLHttpRequest();
+        const url =
+          "http://10.0.0.50:8080/govee/toggle/on/5F:EB:A4:C1:38:00:92:D2&H6159";
+        Http.open("GET", url);
+        Http.send();
+      }
+
+      function room2_off() {
+        const Http = new XMLHttpRequest();
+        const url =
+          "http://10.0.0.50:8080/govee/toggle/off/5F:EB:A4:C1:38:00:92:D2&H6159";
+        Http.open("GET", url);
+        Http.send();
+      }
+
+      function desk_on() {
+        const Http = new XMLHttpRequest();
+        const url =
+          "http://10.0.0.50:8080/govee/toggle/on/AB:B7:A4:C1:38:BE:1C:6D&H6159";
+        Http.open("GET", url);
+        Http.send();
+      }
+
+      function desk_off() {
+        const Http = new XMLHttpRequest();
+        const url =
+          "http://10.0.0.50:8080/govee/toggle/off/AB:B7:A4:C1:38:BE:1C:6D&H6159";
+        Http.open("GET", url);
+        Http.send();
+      }
+    </script>
+  </body>
+</html>

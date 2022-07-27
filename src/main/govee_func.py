@@ -1,8 +1,6 @@
 from pygovee import Govee
 
 
-
-
 class GoveeFunction:
 
     client = None
@@ -12,7 +10,7 @@ class GoveeFunction:
 
         global client
         client = Govee.GoveeClient(self.apiKey)
-    
+
     def toggle(self, state, mac, model):
         if state == "on":
             client.device_on(mac, model)
