@@ -56,6 +56,42 @@ def scenes(scene):
         kasa_func.toggle('off', kasa_devices['lamp'])
 
         return '200'
+    elif scene == "sleep":
+        govee_func.toggle(
+            "off", govee_devices['room1']['mac'], govee_devices['room1']['model'])
+        govee_func.toggle(
+            "off", govee_devices['room2']['mac'], govee_devices['room2']['model'])
+
+        kasa_func.toggle('off', kasa_devices['lamp'])
+
+        return '200'
+    elif scene == "tealpurple":
+        govee_func.color(
+            0, 255, 255, govee_devices['room1']['mac'], govee_devices['room1']['model'])
+        govee_func.color(
+            0, 255, 255, govee_devices['desk']['mac'], govee_devices['desk']['model'])
+        govee_func.color(
+            255, 0, 255, govee_devices['room2']['mac'], govee_devices['room2']['model'])
+
+        return '200'
+    elif scene == "blueyellow":
+        govee_func.color(
+            0, 0, 255, govee_devices['room1']['mac'], govee_devices['room1']['model'])
+        govee_func.color(
+            0, 0, 255, govee_devices['desk']['mac'], govee_devices['desk']['model'])
+        govee_func.color(
+            255, 190, 0, govee_devices['room2']['mac'], govee_devices['room2']['model'])
+
+        return '200'
+    elif scene == "white":
+        govee_func.color(
+            255, 255, 255, govee_devices['room1']['mac'], govee_devices['room1']['model'])
+        govee_func.color(
+            255, 255, 255, govee_devices['desk']['mac'], govee_devices['desk']['model'])
+        govee_func.color(
+            255, 255, 255, govee_devices['room2']['mac'], govee_devices['room2']['model'])
+
+        return '200'
 
 
 if __name__ == '__main__':

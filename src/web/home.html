@@ -18,6 +18,11 @@
         padding: 15px 15px;
         font-size: 50px;
       }
+      #four {
+        width: 255px;
+        padding: 100px 20px;
+        font-size: 40px;
+      }
     </style>
   </head>
 
@@ -107,45 +112,58 @@
     <p></p>
     <p></p>
     <p></p>
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <button id="four" onclick="sleep()">Sleep</button>
+      <button id="four" onclick="teal_purple()">Teal/Purple</button>
+      <button id="four" onclick="blue_yellow()">Blue/Yellow</button>
+      <button id="four" onclick="white()">White</button>
+    </div>
     <script>
       function all_on() {
         const Http = new XMLHttpRequest();
-        const url = "http://10.0.0.50:8080/scenes/all_on";
+        const url = "http://10.0.0.214:8080/scenes/all_on";
         Http.open("GET", url);
         Http.send();
       }
 
       function all_off() {
         const Http = new XMLHttpRequest();
-        const url = "http://10.0.0.50:8080/scenes/all_off";
+        const url = "http://10.0.0.214:8080/scenes/all_off";
         Http.open("GET", url);
         Http.send();
       }
 
       function lamp_on() {
         const Http = new XMLHttpRequest();
-        const url = "http://10.0.0.50:8080/kasa/toggle/on/10.0.0.27";
+        const url = "http://10.0.0.214:8080/kasa/toggle/on/10.0.0.27";
         Http.open("GET", url);
         Http.send();
       }
 
       function lamp_off() {
         const Http = new XMLHttpRequest();
-        const url = "http://10.0.0.50:8080/kasa/toggle/off/10.0.0.27";
+        const url = "http://10.0.0.214:8080/kasa/toggle/off/10.0.0.27";
         Http.open("GET", url);
         Http.send();
       }
 
       function fan_on() {
         const Http = new XMLHttpRequest();
-        const url = "http://10.0.0.50:8080/kasa/toggle/on/10.0.0.207";
+        const url = "http://10.0.0.214:8080/kasa/toggle/on/10.0.0.207";
         Http.open("GET", url);
         Http.send();
       }
 
       function fan_off() {
         const Http = new XMLHttpRequest();
-        const url = "http://10.0.0.50:8080/kasa/toggle/off/10.0.0.207";
+        const url = "http://10.0.0.214:8080/kasa/toggle/off/10.0.0.207";
         Http.open("GET", url);
         Http.send();
       }
@@ -153,7 +171,7 @@
       function room1_on() {
         const Http = new XMLHttpRequest();
         const url =
-          "http://10.0.0.50:8080/govee/toggle/on/0F:21:A4:C1:38:16:C9:C2&H6110";
+          "http://10.0.0.214:8080/govee/toggle/on/0F:21:A4:C1:38:16:C9:C2&H6110";
         Http.open("GET", url);
         Http.send();
       }
@@ -161,7 +179,7 @@
       function room1_off() {
         const Http = new XMLHttpRequest();
         const url =
-          "http://10.0.0.50:8080/govee/toggle/off/0F:21:A4:C1:38:16:C9:C2&H6110";
+          "http://10.0.0.214:8080/govee/toggle/off/0F:21:A4:C1:38:16:C9:C2&H6110";
         Http.open("GET", url);
         Http.send();
       }
@@ -169,7 +187,7 @@
       function room2_on() {
         const Http = new XMLHttpRequest();
         const url =
-          "http://10.0.0.50:8080/govee/toggle/on/5F:EB:A4:C1:38:00:92:D2&H6159";
+          "http://10.0.0.214:8080/govee/toggle/on/5F:EB:A4:C1:38:00:92:D2&H6159";
         Http.open("GET", url);
         Http.send();
       }
@@ -177,7 +195,7 @@
       function room2_off() {
         const Http = new XMLHttpRequest();
         const url =
-          "http://10.0.0.50:8080/govee/toggle/off/5F:EB:A4:C1:38:00:92:D2&H6159";
+          "http://10.0.0.214:8080/govee/toggle/off/5F:EB:A4:C1:38:00:92:D2&H6159";
         Http.open("GET", url);
         Http.send();
       }
@@ -185,7 +203,7 @@
       function desk_on() {
         const Http = new XMLHttpRequest();
         const url =
-          "http://10.0.0.50:8080/govee/toggle/on/AB:B7:A4:C1:38:BE:1C:6D&H6159";
+          "http://10.0.0.214:8080/govee/toggle/on/AB:B7:A4:C1:38:BE:1C:6D&H6159";
         Http.open("GET", url);
         Http.send();
       }
@@ -193,8 +211,36 @@
       function desk_off() {
         const Http = new XMLHttpRequest();
         const url =
-          "http://10.0.0.50:8080/govee/toggle/off/AB:B7:A4:C1:38:BE:1C:6D&H6159";
+          "http://10.0.0.214:8080/govee/toggle/off/AB:B7:A4:C1:38:BE:1C:6D&H6159";
         Http.open("GET", url);
+        Http.send();
+      }
+
+      function sleep() {
+        const Http = new XMLHttpRequest();
+        const room1 = "http://10.0.0.214:8080/scenes/sleep";
+        Http.open("GET", room1);
+        Http.send();
+      }
+
+      function teal_purple() {
+        const Http = new XMLHttpRequest();
+        const room1 = "http://10.0.0.214:8080/scenes/tealpurple";
+        Http.open("GET", room1);
+        Http.send();
+      }
+
+      function blue_yellow() {
+        const Http = new XMLHttpRequest();
+        const room1 = "http://10.0.0.214:8080/scenes/blueyellow";
+        Http.open("GET", room1);
+        Http.send();
+      }
+
+      function white() {
+        const Http = new XMLHttpRequest();
+        const room1 = "http://10.0.0.214:8080/scenes/white";
+        Http.open("GET", room1);
         Http.send();
       }
     </script>

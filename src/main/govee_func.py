@@ -17,8 +17,14 @@ class GoveeFunction:
         elif state == "off":
             client.device_off(mac, model)
 
+        return '200'
+
     def color(self, r, g, b, mac, model):
-        client.change_device_color(mac, model, r, g, b)
+        client.change_device_color(mac, model, int(r), int(g), int(b))
+
+        return '200'
 
     def brightness(self, brightness_level, mac, model):
         client.change_device_brightness(mac, model, brightness_level)
+
+        return '200'
